@@ -1,10 +1,13 @@
 package sea.storm.trident.disease;
 
-import org.apache.storm.generated.StormTopology;
-import org.apache.storm.trident.Stream;
-import org.apache.storm.trident.TridentTopology;
-import org.apache.storm.trident.operation.builtin.Count;
-import org.apache.storm.tuple.Fields;
+
+
+import backtype.storm.generated.StormTopology;
+import backtype.storm.tuple.Fields;
+import storm.trident.Stream;
+import storm.trident.TridentTopology;
+import storm.trident.operation.builtin.Count;
+import storm.trident.testing.MemoryMapState;
 
 public class OutbreakDetectionTopology {
     
@@ -23,7 +26,7 @@ public class OutbreakDetectionTopology {
     
         .groupBy(new Fields("cityDiseaseHour"))
         
-        .persistentAggregate(/*new OuteBreakTrendFactory()*/null, new Count(), new Fields("count"))
+        .persistentAggregate(new MemoryMapState.Factory(), new Count(), new Fields("count"))
         .newValuesStream()
         
         .each(new Fields("cityDiseaseHour","count"),new OutbreakDector(),new Fields("alert"))

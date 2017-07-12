@@ -2,37 +2,41 @@ package sea.storm.trident.disease;
 
 import java.util.Map;
 
-import org.apache.storm.task.TopologyContext;
-import org.apache.storm.trident.spout.ITridentSpout;
-import org.apache.storm.tuple.Fields;
+import backtype.storm.task.TopologyContext;
+import backtype.storm.tuple.Fields;
+import storm.trident.spout.ITridentSpout;
+import storm.trident.spout.ITridentSpout.BatchCoordinator;
 
 public class DiagnosisEventSpout implements ITridentSpout<Long>{
 
     private static final long serialVersionUID = 1L;
 
-    @Override
-    public Map<String, Object> getComponentConfiguration() {
-        // TODO Auto-generated method stub
-        return null;
-    }
+	@Override
+	public storm.trident.spout.ITridentSpout.BatchCoordinator<Long> getCoordinator(String txStateId, Map conf,
+			TopologyContext context) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-    @Override
-    public BatchCoordinator<Long> getCoordinator(String arg0, Map arg1,TopologyContext arg2) {
-        // TODO Auto-generated method stub
-        return null;
-    }
+	@Override
+	public storm.trident.spout.ITridentSpout.Emitter<Long> getEmitter(String txStateId, Map conf,
+			TopologyContext context) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-    @Override
-    public org.apache.storm.trident.spout.ITridentSpout.Emitter<Long> getEmitter(String arg0, Map arg1,
-                                                                                 TopologyContext arg2) {
-        // TODO Auto-generated method stub
-        return null;
-    }
+	@Override
+	public Map<String, Object> getComponentConfiguration() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-    @Override
-    public Fields getOutputFields() {
-        // TODO Auto-generated method stub
-        return null;
-    }
+	@Override
+	public Fields getOutputFields() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+   
 
 }

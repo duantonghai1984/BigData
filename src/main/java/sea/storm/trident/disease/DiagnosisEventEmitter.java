@@ -1,29 +1,39 @@
 package sea.storm.trident.disease;
 
-import org.apache.storm.trident.operation.TridentCollector;
-import org.apache.storm.trident.spout.ITridentSpout.Emitter;
-import org.apache.storm.trident.topology.TransactionAttempt;
+import java.math.BigInteger;
 
-public class DiagnosisEventEmitter implements Emitter<Long>{
+import backtype.storm.coordination.BatchOutputCollector;
+import backtype.storm.transactional.ICommitterTransactionalSpout.Emitter;
+import backtype.storm.transactional.TransactionAttempt;
+import storm.trident.operation.TridentCollector;
+
+public class DiagnosisEventEmitter implements Emitter{
+
+	@Override
+	public void emitBatch(TransactionAttempt tx, Object coordinatorMeta, BatchOutputCollector collector) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void cleanupBefore(BigInteger txid) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void close() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void commit(TransactionAttempt attempt) {
+		// TODO Auto-generated method stub
+		
+	}
 
      
-    
-    @Override
-    public void close() {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public void emitBatch(TransactionAttempt arg0, Long arg1, TridentCollector arg2) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public void success(TransactionAttempt arg0) {
-        // TODO Auto-generated method stub
-        
-    }
+   
 
 }
