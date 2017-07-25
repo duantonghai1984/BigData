@@ -23,8 +23,8 @@ public class OutbreakDetectionTopology {
     
         .groupBy(new Fields("cityDiseaseHour"))
         
-        .persistentAggregate(/*new OuteBreakTrendFactory()*/null, new Count(), new Fields("count"))
-        .newValuesStream()
+        //.persistentAggregate(/*new OuteBreakTrendFactory()*/null, new Count(), new Fields("count"))
+        //.newValuesStream()
         
         .each(new Fields("cityDiseaseHour","count"),new OutbreakDector(),new Fields("alert"))
         
