@@ -1,6 +1,6 @@
 package sea.storm.trident.disease;
 
-import org.apache.storm.trident.spout.ITridentSpout.BatchCoordinator;
+import storm.trident.spout.ITridentSpout.BatchCoordinator;
 
 public class DefaultCoordinator implements BatchCoordinator<Long> {
 

@@ -1,7 +1,7 @@
 package sea.storm.trident.disease;
 
-import org.apache.storm.trident.operation.BaseFilter;
-import org.apache.storm.trident.tuple.TridentTuple;
+import storm.trident.operation.BaseFilter;
+import storm.trident.tuple.TridentTuple;
 
 public class DiseaseFilter extends BaseFilter{
 
